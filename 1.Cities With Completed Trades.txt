@@ -1,8 +1,0 @@
-with q1 as (
-select Trades.status, Users.city from TRADES
-INNER JOIN USERS
-ON TRADES.USER_ID = USERS.USER_ID
-WHERE STATUS = 'Completed')
-SELECT city, count(*) as total_orders FROM Q1
-group by city
-order by total_orders desc;

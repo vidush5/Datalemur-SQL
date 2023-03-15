@@ -1,0 +1,10 @@
+with total_tweets_per_user as (
+SELECT  
+user_id ,
+count(tweet_id) as tweets_num
+FROM tweets
+where extract(year from tweet_date) = 2022
+group by user_id)
+select tweets_num, count(user_id)
+from total_tweets_per_user
+group by tweets_num

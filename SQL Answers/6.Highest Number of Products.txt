@@ -1,0 +1,7 @@
+select user_id, product_num from
+(select user_id, sum(spend) total_spend, count(product_id) product_num
+from user_transactions
+group by user_id
+having sum(spend) >1000
+order by 3 desc, 2 desc) a
+limit 3

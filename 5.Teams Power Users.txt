@@ -1,6 +1,0 @@
-SELECT sender_id, count(*) as message_count 
-FROM messages
-WHERE sent_date between '08/01/2022' and '08/31/2022'
-group by sender_id
-order by message_count desc
-limit 2;
